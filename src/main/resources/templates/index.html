@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      >
+<head>
+    <meta charset="UTF-8"/>
+    <title>Users App</title>
+
+    <link  rel="stylesheet" href="../static/bootstrap.css" th:href="@{/bootstrap.css}"/>
+    <script type="text/javascript" src="/static/angular.min.js" th:src="@{/angular.min.js}"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/adonespitogo/angular-base64-upload/master/src/angular-base64-upload.js"></script>
+    <script type="text/javascript" src="/static/app/app.module.js" th:src="@{/app/app.module.js}"></script>
+    <script type="text/javascript" src="/static/app/users.controller.js" th:src="@{/app/users.controller.js}"></script>
+
+</head>
+<body ng-app="app" ng-controller="UsersController as vm">
+<div class="row">
+    <div class="col-lg-offset-2 col-lg-8">
+
+<div class="panel panel-default">
+    <div class="panel-heading"><span class="lead">User Registration Form </span></div>
+    <div class="formcontainer">
+        <form ng-submit="vm.loadData()" name="myForm" class="form-horizontal">
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label class="col-md-2 control-lable" for="uname">Name</label>
+                    <div class="col-md-7">
+                        <input type="text" ng-model="vm.user.username" id="uname" class="username form-control input-sm" placeholder="Enter your name"> </input>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label class="col-md-2 control-lable">Imagen</label>
+                    <div class="col-md-7" >
+                        <input type="file" id="file" name="file"/>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-8"></div>
+                <div class="col-md-3">
+                <div class="form-actions ">
+                    <input type="submit"  value="Add" class="btn btn-primary btn-sm"> </input>
+                </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </form>
+    </div>
+</div>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-lg-offset-2 col-lg-8">
+
+            <button ng-click="vm.getAll()" type="button" class="btn btn-default">All</button>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Image</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in vm.users">
+                        <td>{{user.username}}</td>
+                        <td><img data-ng-src="{{user.image}}"/></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
