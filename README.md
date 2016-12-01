@@ -1,61 +1,55 @@
 # Desafio Acid Labs
-> Short blurb about what your product does.
+> Prueba de ingreso a acidlabs.
 
 [![Build Status][travis-image]][travis-url]
 
-One to two paragraph statement about your product and what it does.
+El proyecto esta conformado por un cliente desarrollado con AngularJS, que consume servicios rest proporcionados por la aplicación realizada con Spring boot.
+
+## Captura de pantalla de cliente realizado con AngularJS 
 
 ![](ss_proyecto.png)
 
-## Installation
 
-OS X & Linux:
 
-```sh
-npm install my-crazy-module --save
-```
+## Repuesta de servicios y estados
 
-Windows:
+Para verificar el correcto funcionamiento de lo solicitado, es necesario usar algun programa como Postman y comprobar cada una de las solicitudes explicadas en el punto WebService y Servidor
 
-```sh
-edit autoexec.bat
-```
+### WebService y Servidor
 
-## Usage example
+1.- Se ha implementado un servicio Web, con la estructura http://localhost:8080/users. Este servicio recibie un request POST con el siguiente contenido JSON:
+{
+  “username”: String,
+  "image"   : String
+}
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+Cuando se envía el valor "usuario1" como username, guardará los datos, para cualquier otro nombre de usuario, retornará que el webservice es 401 (Unauthorized).
+{
+  "message" : "Unauthorized"
+}
 
-## Development setup
+Si es un usuario autorizado y los parámetros image y username contienen datos,  persistirá la información, en cuyo caso el webservice retornara código 201 (Created) sin body en el response.
 
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
+Si alguno de los parámetros no contiene datos se retorna 400 (Bad Request)
+{
+  "message" : "Bad Request"
+}
 
-```sh
-make install
-npm test
-```
+
 
 ## Release History
 
-* 0.2.1
-    * CHANGE: Update docs (module code remains unchanged)
-* 0.2.0
-    * CHANGE: Remove `setDefaultXYZ()`
-    * ADD: Add `init()`
-* 0.1.1
-    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
 * 0.1.0
-    * The first proper release
-    * CHANGE: Rename `foo()` to `bar()`
+    * CHANGE: Actualizacion de archivos y documentacion
 * 0.0.1
-    * Work in progress
+    * Progresando en el proyecto
 
 ## Meta
 
-Your Name – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
+Gregory Llanos – [@YourTwitter](https://twitter.com/GregoryFLM) – llanosgreg@gmail.com
 
-Distributed under the XYZ license. See ``LICENSE`` for more information.
 
-[https://github.com/yourname/github-link](https://github.com/dbader/)
+[https://github.com/gregflm/github-link](https://github.com/gregflm)
 
 [npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/datadog-metrics
