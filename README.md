@@ -13,7 +13,7 @@ El proyecto esta conformado por un cliente desarrollado con AngularJS, que consu
 
 ## Repuesta de servicios y estados
 
-Para verificar el correcto funcionamiento de lo solicitado, es necesario usar algun programa como Postman y comprobar cada una de las solicitudes explicadas en el punto WebService y Servidor
+Para verificar el correcto funcionamiento de lo solicitado, es necesario usar algun programa como Postman o inspeccionando la ejecución del programa con algún navegador actual, en las pestañas Network/Console. Así podremos comprobar cada una de las solicitudes explicadas en el punto WebService y Servidor
 
 ### WebService y Servidor
 
