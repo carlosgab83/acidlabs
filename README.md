@@ -46,7 +46,7 @@ Si alguno de los parámetros no contiene datos se retorna 400 (Bad Request)
 
 ## Meta
 
-Gregory Llanos – [@YourTwitter](https://twitter.com/GregoryFLM) – llanosgreg@gmail.com
+Gregory Llanos – [@GregoryFLM](https://twitter.com/GregoryFLM) – llanosgreg@gmail.com
 
 
 [https://github.com/gregflm/github-link](https://github.com/gregflm)
